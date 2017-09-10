@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="core_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/base_statusbar_background</item>
+        <item name="colorPrimaryDark">@color/base_statusbar_background</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/core_AppAnimalStyle</item>
+        <item name="android:resizeableActivity">false</item>
+    </style>
+</resources>

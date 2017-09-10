@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hzecool.core">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <application>
+        <activity
+            android:name=".activity.webview.JsBridgeWebViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.imagepager.ImagePagerActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".crash.DefaultErrorActivity"
+            android:screenOrientation="portrait"></activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="core_apk_notfind">新apk未找到 請清除緩存重試</string>
+    <string name="core_app_crash">很抱歉,程序出現異常,即將退出！</string>
+    <string name="core_downurl_error">獲取更新地址失敗！</string>
+    <string name="core_fastest_version">您當前已經是最新版本了！</string>
+    <string name="core_hasnew_version">檢測到新版本！</string>
+    <string name="core_update">更新</string>
+    <string name="base_netError">網絡連接失敗</string>
+    <string name="connect_time_out">連接超時</string>
+
+    <string name="core_resource_allow_permision">請在設置打開應用權限</string>
+    <string name="base_request_faile">請求失敗</string>
+    <string name="core_pic_loading">圖片加載中...</string>
+
+    <string name="base_down">下載</string>
+    <string name="base_upLoad">上傳</string>
+    <string name="core_downing">正在下載...</string>
+    <string name="core_upLoading">正在上傳...</string>
+    <string name="core_waite">請稍候...</string>
+    <string name="base_operatorSuccess">操作成功</string>
+
+    <string name="base_exit">退出</string>
+    <string name="base_cancel">取消</string>
+    <string name="base_back">返回</string>
+    <string name="base_waite">請稍候</string>
+    <string name="base_no_data">沒有數據</string>
+    <string name="click_retry">點擊重試</string>
+    <string name="bala_str">結算</string>
+
+
+    <string name="customactivityoncrash_error_activity_error_occurred_explanation">抱歉,app發生了異常奔潰.</string>
+    <string name="customactivityoncrash_error_activity_unknown_exception">未知異常</string>
+    <string name="customactivityoncrash_error_activity_restart_app">重啟程序</string>
+    <string name="customactivityoncrash_error_activity_close_app">關閉程序</string>
+    <string name="customactivityoncrash_error_activity_error_details">錯誤詳情</string>
+    <string name="customactivityoncrash_error_activity_error_details_title">錯誤詳情</string>
+    <string name="customactivityoncrash_error_activity_error_details_close">關閉</string>
+    <string name="customactivityoncrash_error_activity_error_details_copy">複製到粘貼板</string>
+    <string name="customactivityoncrash_error_activity_error_details_copied">複製到粘貼板</string>
+    <string name="customactivityoncrash_error_activity_error_details_clipboard_label">錯誤信息</string>
+
+    <string name="invalid_num">無效的號碼</string>
+    <string name="null_phone_number">號碼為空,請選擇有號碼的客戶</string>
+    <string name="link_print_faild">鏈接打印機失敗</string>
+    <string name="print_data_faild">打印機數據傳輸失敗</string>
+    <string name="check_print_setting">請檢查打印設置</string>
+    <string name="no_pic_share">該款號無圖片可以分享</string>
+    <string name="share_single">分享該張圖片</string>
+    <string name="share_all">分享所有圖片</string>
+    <string name="photo_share">圖片分享</string>
+</resources>

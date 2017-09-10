@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--所有界面背景色-->
+    <color name="base_backgroundcolor">#eeeeee</color>
+
+    <!--加载界面背景色-->
+    <color name="base_loading_background">#f7f7f7</color>
+
+    <!--白色-->
+    <color name="base_white">#FFFFFF</color>
+
+    <!--透明-->
+    <color name="base_transparent">#00000000</color>
+
+    <!--橙红色-->
+    <color name="base_red">@color/base_slh_btn_red</color>
+
+    <!--黑色-->
+    <color name="base_black">#3d4245</color>
+
+    <!--半透明黑色-->
+    <color name="base_half_black">#aa000000</color>
+
+
+    <!--分割线背景色-->
+    <color name="base_line_bg">@color/base_slh_divider</color>
+
+    <!--普通字体色-->
+    <color name="base_font">@color/base_slh_text_normal</color>
+
+    <!--可点击字体色-->
+    <color name="base_font_click">@color/base_slh_text_blue</color>
+
+    <!--输入框hint颜色-->
+    <color name="base_font_hint">@color/base_slh_text_gray</color>
+
+    <!--输入框输入后字体颜色-->
+    <color name="base_font_input">@color/base_slh_text_normal</color>
+
+    <!--标题栏色-->
+    <color name="base_title_background">@color/base_white</color>
+
+    <!--状态栏颜色-->
+    <color name="base_statusbar_background">#3d4245</color>
+
+    <!--按钮不可点击颜色-->
+    <color name="base_btn_enable_false">#c8c8c8</color>
+
+    <!--字体橘色-->
+    <color name="base_slh_text_orange">#ff5500</color>
+    <!--字体正常色-->
+    <color name="base_slh_text_normal">#3d4245</color>
+    <!--字体蓝色(可点击)-->
+    <color name="base_slh_text_blue">#5eafff</color>
+    <!--字体灰色-->
+    <color name="base_slh_text_gray">#999999</color>
+    <!--分割线(中间)-->
+    <color name="base_slh_divider">#eeeeee</color>
+    <!--分割线(最后)-->
+    <color name="base_slh_divider_last">#dbdbdb</color>
+
+    <color name="_edeef1">#edeef1</color>
+
+
+    <!--按钮红色-->
+    <color name="base_slh_btn_red">#ce000d</color>
+    <!--标签橘色-->
+    <color name="base_slh_lab_orange">#ff3b30</color>
+
+</resources>
