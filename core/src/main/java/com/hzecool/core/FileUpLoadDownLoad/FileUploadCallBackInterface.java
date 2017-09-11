@@ -1,4 +1,4 @@
-package com.hzecool.core.net;
+package com.hzecool.core.FileUpLoadDownLoad;
 
 /**
  * 文件上传回调接口

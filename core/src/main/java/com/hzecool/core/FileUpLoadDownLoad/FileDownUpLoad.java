@@ -1,4 +1,4 @@
-package com.hzecool.core.net;
+package com.hzecool.core.FileUpLoadDownLoad;
 
 
 import android.support.annotation.Nullable;
@@ -16,7 +16,7 @@ import com.lzy.okgo.callback.StringCallback;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
-import java.util.HashMap;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Response;
@@ -28,14 +28,13 @@ import okhttp3.Response;
 
 public class FileDownUpLoad {
 
-
-    private static MaterialDialog dialog;
+    private MaterialDialog dialog;
 
     /**
      * 下载文件
      */
-    public static void downLoadFile(String tag, String url, String destFileDir, String name,
-                                    final FileDownCallBackInterface downCallBackInterface) {//
+    public void downLoadFile(String tag, String url, String destFileDir, String name,
+                             final FileDownCallBackInterface downCallBackInterface) {//
         L.i("url====" + url);
         OkGo.get(url)
                 .tag(tag)
@@ -91,18 +90,29 @@ public class FileDownUpLoad {
      *
      * @param tag                     tag用来取消任务
      * @param url                     上传路径url
-     * @param params                  参数
-     * @param file                    文件
+     * @param key                     文件对应的key
+     * @param fileList                文件file
      * @param uploadCallBackInterface 上传回调
      * @param activity                activity用来显示进度框 如果后面showProgress 这个参数为false可以传null
      * @param showProgress            是否显示进度框
      */
-    public static void upFile(String tag, String url, HashMap<String, String> params, File file, final
+    public void upFile(String tag, String url, String key, List<File> fileList, final
     FileUploadCallBackInterface uploadCallBackInterface, @Nullable WeakReference<TAbsActivity> activity, @Nullable boolean showProgress) {
 
+        if (fileList == null || fileList.isEmpty()) {
+            L.logFile("上传文件为空,直接return");
+            return;
+        }
         L.logFile("upFile: url=" + url);
-        L.logFile("upFile: params=" + params.toString() + "file=" + file.getAbsolutePath());
 
+        StringBuffer sb = new StringBuffer();
+        sb.append("upFile: key=" + key);
+        sb.append("上传文件路径:" + "\n");
+        for (File file : fileList) {
+            sb.append(" " + file.getAbsolutePath()).append("\n");
+        }
+
+        L.logFile(sb.toString());
 
         if (showProgress && activity != null && activity.get() instanceof TAbsActivity) {
             dialog = new MaterialDialog.Builder(activity.get())
@@ -115,8 +125,9 @@ public class FileDownUpLoad {
 
         OkGo.post(url)//
                 .tag(tag)//
+                .addFileParams(key, fileList)
 //                .isMultipart(true)       // 强制使用 multipart/form-data 表单上传（只是演示，不需要的话不要设置。默认就是false）
-                .params("file1", file)   // 可以添加文件上传
+//                .params("file1", file)   // 可以添加文件上传
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
@@ -165,17 +176,13 @@ public class FileDownUpLoad {
 
     }
 
-
-    public static void cancelRequest(String tag) {
+    public void cancelRequest(String tag) {
         //根据 Tag 取消请求
         OkGo.getInstance().cancelTag(tag);
-
-
     }
 
-    public static void cancelAllRequest() {
+    public void cancelAllRequest() {
         //根据 Tag 取消请求
         OkGo.getInstance().cancelAll();
-
     }
 }
