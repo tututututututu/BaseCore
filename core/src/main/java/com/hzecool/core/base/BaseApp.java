@@ -18,7 +18,6 @@ import com.squareup.leakcanary.LeakCanary;
 
 import static com.hzecool.core.data.AppData.LOG_DEBUG;
 
-
 /**
  * BaseApp core层Application
  * Created by tutu on 2017/3/3.
@@ -43,13 +42,10 @@ public class BaseApp extends Application {
         //内存泄漏检测
         if (LOG_DEBUG) {
             if (LeakCanary.isInAnalyzerProcess(this)) {
-                // This process is dedicated to LeakCanary for heap analysis.
-                // You should not init your app in this process.
                 return;
             }
             LeakCanary.install(this);
         }
-
 
         //日志开关
         L.initLoger(LOG_DEBUG);
@@ -57,15 +53,16 @@ public class BaseApp extends Application {
         initLocalLog();
         //初始化数据库
         initDB();
-        //初始化SP
+        //初始化SP  清理缓存会删除掉的sp
         SPUtils.initSP("appData");
+        //清理缓存不会删除的sp
         FinalSPOperation.initSP("finalData");
         //初始化OKgo
         OkGo.init(this);
 
         //初始化路由
         initArouter();
-
+        //初始化 空布局
         initLoadingLayout();
     }
 

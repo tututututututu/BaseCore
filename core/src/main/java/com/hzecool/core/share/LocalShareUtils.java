@@ -85,7 +85,7 @@ public class LocalShareUtils {
         shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uriList);
         shareIntent.setType("image/*");
         context.startActivity(Intent.createChooser(shareIntent, "分享到"));
-      /*  CacheManager.INSTANCE.clear();
+      /*  CacheDirManager.INSTANCE.clear();
         deleteDir(getTyleCachePath(SHARE_CACHE_PATH));*/
     }
 

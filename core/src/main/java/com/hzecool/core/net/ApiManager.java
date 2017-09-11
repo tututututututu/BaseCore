@@ -1,8 +1,11 @@
 package com.hzecool.core.net;
+
 import com.hzecool.core.data.AppData;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -17,8 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiManager {
     private static Map<Class, Object> apiServiceMap = new HashMap<>();
-    public static final int CONNECT_TIME_OUT_SECONDS = 15;
-    public static final int READ_TIME_OUT_SECONDS = 15;
+    private static final int CONNECT_TIME_OUT_SECONDS = 15;
+    private static final int READ_TIME_OUT_SECONDS = 15;
 
 
     /**
@@ -71,7 +74,6 @@ public class ApiManager {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(CONNECT_TIME_OUT_SECONDS, TimeUnit.SECONDS)
                 .readTimeout(READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-//                .addInterceptor(logging)
                 .addInterceptor(new LoggingInterceptor())
                 .addInterceptor(new ParamsInterceptord())
                 .build();
@@ -101,7 +103,6 @@ public class ApiManager {
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(CONNECT_TIME_OUT_SECONDS, TimeUnit.SECONDS)
                 .readTimeout(READ_TIME_OUT_SECONDS, TimeUnit.SECONDS)
-//                .addInterceptor(logging)
                 .addInterceptor(new LoggingInterceptor())
                 .addInterceptor(new ParamsInterceptord())
                 .build();

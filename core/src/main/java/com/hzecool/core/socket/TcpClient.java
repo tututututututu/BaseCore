@@ -9,8 +9,6 @@ import com.koushikdutta.async.AsyncServer;
 import com.koushikdutta.async.Util;
 import com.koushikdutta.async.future.Cancellable;
 
-import java.util.Arrays;
-
 /**
  * Created by tutu on 2017/6/14.
  */
@@ -94,12 +92,6 @@ public class TcpClient {
         handler.removeCallbacks(runnable);
         handler.postDelayed(runnable, 5000);
         Looper.loop();
-    }
-
-    public static <T> T[] concat(T[] first, T[] second) {
-        T[] result = Arrays.copyOf(first, first.length + second.length);
-        System.arraycopy(second, 0, result, first.length, second.length);
-        return result;
     }
 
     public interface CallBack {

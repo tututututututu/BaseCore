@@ -4,6 +4,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Looper;
 
+import com.hzecool.core.cache.CacheDirManager;
 import com.hzecool.core.common.utils.AppUtils;
 import com.hzecool.core.common.utils.CloseUtils;
 import com.hzecool.core.common.utils.FileUtils;
@@ -11,7 +12,6 @@ import com.hzecool.core.common.utils.ResourceUtils;
 import com.hzecool.core.common.utils.ToastUtils;
 import com.hzecool.core.common.utils.Utils;
 import com.hzecool.core.R;
-import com.hzecool.core.cache.CacheManager;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -64,7 +64,7 @@ public class CrashHandler
     public boolean init() {
         if (mInitialized) return true;
 
-        crashDir = CacheManager.getTyleCachePath(CacheManager.LOG_CACHE_PATH) + File.separator + "crash" + File.separator;
+        crashDir = CacheDirManager.getTyleCachePath(CacheDirManager.LOG_CACHE_PATH) + File.separator + "crash" + File.separator;
 
         try {
             PackageInfo pi = Utils.getContext().getPackageManager().getPackageInfo(Utils.getContext().getPackageName

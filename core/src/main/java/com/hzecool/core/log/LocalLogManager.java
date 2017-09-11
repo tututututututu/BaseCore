@@ -6,10 +6,10 @@ package com.hzecool.core.log;
 
 import android.content.Context;
 
+import com.hzecool.core.cache.CacheDirManager;
 import com.hzecool.core.common.utils.AppUtils;
 import com.hzecool.core.common.utils.FileUtils;
 import com.hzecool.core.common.utils.ZipUtils;
-import com.hzecool.core.cache.CacheManager;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -84,7 +84,7 @@ public class LocalLogManager {
     public static void initLog(Context context) {
         getInstanse();
         localLogManager.appContext = context;
-        localLogManager.cacheFilePath = CacheManager.getTyleCachePath(CacheManager.LOG_CACHE_PATH);
+        localLogManager.cacheFilePath = CacheDirManager.getTyleCachePath(CacheDirManager.LOG_CACHE_PATH);
     }
 
 

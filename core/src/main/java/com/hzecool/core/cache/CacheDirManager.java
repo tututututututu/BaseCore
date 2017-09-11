@@ -12,11 +12,11 @@ import java.lang.annotation.RetentionPolicy;
 import static com.hzecool.core.common.utils.FileUtils.deleteDir;
 
 /**
- * Discribe:app缓存管理类
+ * Discribe:app缓存路径管理类
  * Created by tutu on 2017/3/17.
  */
 
-public class CacheManager {
+public class CacheDirManager {
     /**
      * 分享缓存
      */
@@ -80,6 +80,7 @@ public class CacheManager {
 
             case DB_CACHE_PATH:
                 return getAppCachePath() + File.separator + "dbCache";
+
             case IMG_CACHE_PATH:
                 return getAppCachePath() + File.separator + "imgCache";
         }
@@ -92,16 +93,39 @@ public class CacheManager {
      * 包括通用缓存,分享下载的图片缓存
      */
     public static void clearCommonCache() {
-        deleteDir(getTyleCachePath(COMMON_CACHE_PATH));
-        deleteDir(getTyleCachePath(SHARE_CACHE_PATH));
-        deleteDir(getTyleCachePath(IMG_CACHE_PATH));
-        // com.lzy.okgo.cache.CacheManager.INSTANCE.clear();
+        clearSpecifiedCache(COMMON_CACHE_PATH);
+        clearSpecifiedCache(SHARE_CACHE_PATH);
+        clearSpecifiedCache(IMG_CACHE_PATH);
     }
 
     /**
      * 清除日志缓存
      */
     public static void clearLogCache() {
-        deleteDir(getTyleCachePath(LOG_CACHE_PATH));
+        clearSpecifiedCache(LOG_CACHE_PATH);
+    }
+
+    public static void clearDbCacje() {
+        clearSpecifiedCache(DB_CACHE_PATH);
+    }
+
+
+    public static void clearSpecifiedCache(@CacheType int cacheType) {
+        switch (cacheType) {
+            case COMMON_CACHE_PATH:
+                deleteDir(getTyleCachePath(COMMON_CACHE_PATH));
+
+            case SHARE_CACHE_PATH:
+                deleteDir(getTyleCachePath(SHARE_CACHE_PATH));
+
+            case LOG_CACHE_PATH:
+                deleteDir(getTyleCachePath(LOG_CACHE_PATH));
+
+            case DB_CACHE_PATH:
+                deleteDir(getTyleCachePath(DB_CACHE_PATH));
+
+            case IMG_CACHE_PATH:
+                deleteDir(getTyleCachePath(IMG_CACHE_PATH));
+        }
     }
 }

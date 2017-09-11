@@ -24,7 +24,6 @@ public class CoreInit {
     private CoreInit() {
     }
 
-
     public static CoreInit getInstance() {
         return instance;
     }

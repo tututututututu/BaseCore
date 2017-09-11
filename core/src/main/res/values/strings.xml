@@ -51,5 +51,7 @@
     <string name="no_call_permission">没有电话权限</string>
     <string name="no_msg_permission">没有短信权限</string>
     <string name="get_code_again">重新获取</string>
+    <string name="empty_print_data">打印数据为空</string>
+    <string name="print_port_ip_error">打印IP或端口设置错误</string>
 
 </resources>

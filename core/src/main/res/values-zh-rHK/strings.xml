@@ -48,4 +48,6 @@
     <string name="share_single">分享該張圖片</string>
     <string name="share_all">分享所有圖片</string>
     <string name="photo_share">圖片分享</string>
+    <string name="empty_print_data">列印數據為空</string>
+    <string name="print_port_ip_error">打印IP或端口設置錯誤</string>
 </resources>
