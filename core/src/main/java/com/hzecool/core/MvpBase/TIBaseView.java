@@ -1,4 +1,4 @@
-package com.hzecool.core.base;
+package com.hzecool.core.MvpBase;
 
 /**
  * 所有View层的基类

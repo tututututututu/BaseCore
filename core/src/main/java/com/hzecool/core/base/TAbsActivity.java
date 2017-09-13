@@ -2,15 +2,19 @@ package com.hzecool.core.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.hzecool.core.common.utils.KeyboardUtils;
 import com.hzecool.core.ActivityManager.ActivityStack;
+import com.hzecool.core.R;
+import com.hzecool.core.common.utils.KeyboardUtils;
 
 
 /**
@@ -21,6 +25,15 @@ public abstract class TAbsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(getResources().getColor(
+                    R.color.base_statusbar_background));
+        }
+
         ActivityStack.push(this);
     }
 

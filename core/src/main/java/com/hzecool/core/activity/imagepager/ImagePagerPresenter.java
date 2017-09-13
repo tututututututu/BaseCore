@@ -1,6 +1,6 @@
 package com.hzecool.core.activity.imagepager;
 
-import com.hzecool.core.base.TBasePresenter;
+import com.hzecool.core.MvpBase.TBasePresenter;
 
 /**
  * Created by song on 2017/8/30.

@@ -1,19 +1,16 @@
-package com.hzecool.core.base;
+package com.hzecool.core.MvpBase;
 
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hzecool.core.R;
+import com.hzecool.core.base.TAbsActivity;
 import com.hzecool.core.log.L;
 import com.hzecool.widget.materialdialog.MaterialDialog;
 
@@ -28,7 +25,7 @@ import io.reactivex.internal.disposables.ListCompositeDisposable;
  * dialog
  * rxBus事件容器
  * view和presneter的绑定 解绑
- * Created by tutu on 16/4/10.
+ * Created by tutu on 17/9/13.
  */
 public abstract class TBaseActivity<V extends TIBaseView, T extends TBasePresenter<V>> extends TAbsActivity {
 
@@ -101,25 +98,8 @@ public abstract class TBaseActivity<V extends TIBaseView, T extends TBasePresent
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            L.logFile("程序被系统回收,重新启动");
-            Intent i = getBaseContext().getPackageManager()
-                    .getLaunchIntentForPackage(getBaseContext().getPackageName());
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(i);
-            finish();
-            return;
-        }
-
         ARouter.getInstance().inject(this);
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(
-                    R.color.base_statusbar_background));
-        }
         setContentView(getLayoutID());
         unbinder = ButterKnife.bind(this);
 
@@ -129,12 +109,12 @@ public abstract class TBaseActivity<V extends TIBaseView, T extends TBasePresent
         //关联View
         mPresenter.attachView((V) this);
 
-        mTvTitleName = (TextView) findViewById(R.id.tv_titel);
-        mIvBack = (ImageView) findViewById(R.id.iv_back);
-        mTvMenu = (TextView) findViewById(R.id.tv_menu);
+        mTvTitleName = findViewById(R.id.tv_titel);
+        mIvBack = findViewById(R.id.iv_back);
+        mTvMenu = findViewById(R.id.tv_menu);
         mViewTitleRoot = findViewById(R.id.title_root);
         mViewLlBack = findViewById(R.id.ll_back);
-        mTvBack = (TextView) findViewById(R.id.tv_back);
+        mTvBack = findViewById(R.id.tv_back);
 
         mDisposableContainer = new ListCompositeDisposable();
 

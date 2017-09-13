@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
 import com.hzecool.core.R;
-import com.hzecool.core.base.TBaseActivity;
+import com.hzecool.core.MvpBase.TBaseActivity;
 import com.hzecool.core.common.utils.NetworkUtils;
 import com.hzecool.core.common.utils.ResourceUtils;
 import com.hzecool.core.common.utils.ScreenUtils;

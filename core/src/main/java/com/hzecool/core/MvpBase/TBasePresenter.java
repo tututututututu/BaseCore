@@ -1,4 +1,4 @@
-package com.hzecool.core.base;
+package com.hzecool.core.MvpBase;
 
 
 import com.hzecool.core.log.L;

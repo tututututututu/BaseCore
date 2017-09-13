@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.hzecool.core.ActivityManager.ActivityStack;
 import com.hzecool.core.R;
-import com.hzecool.core.base.BaseApp;
+import com.hzecool.core.app.BaseApp;
 import com.hzecool.core.cache.CacheDirManager;
 import com.hzecool.core.common.utils.AppUtils;
 import com.hzecool.core.common.utils.ResourceUtils;
@@ -130,7 +130,7 @@ public class AppUpdateService {
      * @param activity    activity
      */
     private void downApk(UpdateBean versionInfo, final WeakReference<Activity> activity) {
-        FileDownUpLoad.downLoadFile("downApk",
+        new FileDownUpLoad().downLoadFile("downApk",
                 versionInfo.getUrl()
                 , getNewApkFileDir(), getNewApkName(String.valueOf(versionInfo.getServerVersion()))
                 , new FileDownCallBackInterface() {

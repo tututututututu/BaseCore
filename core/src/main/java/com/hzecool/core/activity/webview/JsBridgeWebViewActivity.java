@@ -17,7 +17,7 @@ import com.github.lzyzsd.jsbridge.CallBackFunction;
 import com.github.lzyzsd.jsbridge.DefaultHandler;
 import com.hzecool.core.R;
 import com.hzecool.core.R2;
-import com.hzecool.core.base.TBaseActivity;
+import com.hzecool.core.MvpBase.TBaseActivity;
 import com.hzecool.core.common.utils.ToastUtils;
 import com.hzecool.core.data.AppArouterConstants;
 
