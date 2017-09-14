@@ -21,7 +21,7 @@ import io.reactivex.internal.disposables.ListCompositeDisposable;
  */
 
 public abstract class TMvvmBaseActivity<VB extends ViewDataBinding> extends TAbsActivity {
-    private VB mBinding;
+    public VB mBinding;
 
     /**
      * 返回布局文件id
